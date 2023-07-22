@@ -25,6 +25,7 @@ function createTutorialItem() {
     localStorage.setItem("shownInitialText", shownInitialText);
 }
 
+//Functions for button functionality
 function assignAddButtonBehavior() {
     addButton.addEventListener("click", () => {
         const inputValue = input.value.trim();
@@ -33,7 +34,6 @@ function assignAddButtonBehavior() {
         input.value = "";
     });
 }
-
 
 function assignEventListeners() {
     for (i in listBtns) {
