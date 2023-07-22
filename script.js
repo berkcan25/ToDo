@@ -21,12 +21,20 @@ function assignEventListeners() {
         if (listBtn == null) {return}
         listBtn.addEventListener("click", () => {
             const listText = listBtn.nextSibling;
-            if (text == null) {return}
-            text.style.textDecoration = "line-through";
+            if (listText == null) {return}
+            listText.style.textDecoration = "line-through";
         })
     }
 }
 
+//Functions for adding a new item to the to-do list
+
+function addListItem(inputValue) {
+    listItem = createListItem(inputValue);
+    toDoList.appendChild(listItem);
+    todoItems.push(inputValue);
+    saveListToStorage(todoItems);
+}
 
 function createListItem(inputValue) {
     const listItem = document.createElement("li");
@@ -50,15 +58,11 @@ function createListItemText(inputValue) {
     return listText;
 }
 
+
+//Functions for saving and loading from Local Storage
+
 function saveListToStorage(list) {
     localStorage.setItem("savedTodo", list);
-}
-
-function addListItem(inputValue) {
-    listItem = createListItem(inputValue);
-    toDoList.appendChild(listItem);
-    todoItems.push(inputValue);
-    saveListToStorage(todoItems);
 }
 
 function loadListFromStorage() {
