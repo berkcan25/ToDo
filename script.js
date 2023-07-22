@@ -5,8 +5,21 @@ const listBtns = document.getElementsByClassName("check-box");
 
 let todoItems = [];
 
-loadListFromStorage();
-assignEventListeners();
+//start() contains all the function calls for start up
+start();
+
+function start() {
+    loadListFromStorage();
+    const listItems = document.getElementsByClassName("to-do-item");
+    if (listItems.length == 0) {createTutorialItem()}
+    assignEventListeners(); 
+}
+
+function createTutorialItem() {
+    const initialItemText = "Welcome to the ToDoApp! To delete this item, simply click the to the right of this text and refresh the page!";
+    listItem = createListItem(initialItemText);
+    toDoList.appendChild(listItem);
+}
 
 addButton.addEventListener("click", () => {
     const inputValue = input.value.trim();
@@ -38,6 +51,7 @@ function addListItem(inputValue) {
 
 function createListItem(inputValue) {
     const listItem = document.createElement("li");
+    listItem.className = "to-do-item";
     listItem.appendChild(createCheckBox());
     const listText = createListItemText(inputValue);
     listItem.appendChild(listText);
@@ -57,6 +71,10 @@ function createListItemText(inputValue) {
     listText.innerHTML = inputValue;
     return listText;
 }
+
+//Functions for delete an item from the to-do list
+
+function removeListItem() {}
 
 
 //Functions for saving and loading from Local Storage
