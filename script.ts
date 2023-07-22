@@ -54,6 +54,7 @@ function assignEventListeners() {
         const listBtn = listBtns.item(i);
         if (listBtn == null) {return}
         assignCheckBoxEventListener(listBtn);
+        i++;
     }
 }
 
