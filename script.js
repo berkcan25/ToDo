@@ -48,7 +48,6 @@ function assignCheckBoxEventListener(listBtn) {
 }
 
 //Functions for adding a new item to the to-do list
-
 function addListItem(inputValue) {
     listItem = createListItem(inputValue);
     toDoList.appendChild(listItem);
@@ -81,7 +80,6 @@ function createListItemText(inputValue) {
 }
 
 //Functions for deleting an item from the to-do list
-
 function removeListItem(listBtn) {
     const listText = listBtn.nextSibling;
     if (listText == null) {return}
@@ -89,14 +87,12 @@ function removeListItem(listBtn) {
     const listTextString = listText.innerHTML;
     const index = todoItems.indexOf(listTextString);
     if (index == -1) {return}
-    console.log(todoItems.splice(index, 1));
-    todoItems = todoItems.splice(index, 1);
+    todoItems.splice(index, 1);
     saveListToStorage(todoItems);
 }
 
 
 //Functions for saving and loading from Local Storage
-
 function saveListToStorage(list) {
     localStorage.setItem("savedTodo", list);
 }
@@ -104,10 +100,9 @@ function saveListToStorage(list) {
 function loadListFromStorage() {
     let items = localStorage.getItem("savedTodo");
     if (items == null) {return}
-    items = items.split(",");
+    items = items ? items.split(",") : [];
     todoItems = items;
     items.forEach(item => {
-        if (item == false){return}
         const listItem = createListItem(item);
         toDoList.appendChild(listItem);
     });
