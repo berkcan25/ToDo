@@ -2,6 +2,7 @@ const addButton = document.getElementById("add-btn");
 const toDoList = document.getElementById("todo-list");
 const input = document.getElementById("input-text");
 const listBtns = document.getElementsByClassName("check-box");
+let shownInitialText = false;
 
 let todoItems = [];
 
@@ -11,8 +12,7 @@ start();
 //Functions for initialization
 function start() {
     loadListFromStorage();
-    const listItems = document.getElementsByClassName("to-do-item");
-    if (listItems.length == 0) {createTutorialItem()}
+    if (!localStorage.getItem("shownInitialText")) {createTutorialItem()}
     assignEventListeners();
     assignAddButtonBehavior();
 }
@@ -21,6 +21,8 @@ function createTutorialItem() {
     const initialItemText = "Welcome to the ToDoApp! To delete this item, simply click the to the left of this text and refresh the page!";
     listItem = createListItem(initialItemText);
     toDoList.appendChild(listItem);
+    shownInitialText = true;
+    localStorage.setItem("shownInitialText", shownInitialText);
 }
 
 function assignAddButtonBehavior() {
