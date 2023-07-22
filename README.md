@@ -2,7 +2,7 @@
 
 This is a simple To-Do App website, a basic web application that allows you to create and manage your to-do lists. With this app, you can easily add tasks, mark them as completed, and remove them when you're done.
 
-![image](https://github.com/berkcan25/ToDo/assets/103621562/bb8d8d83-5503-4103-ad46-4e7d1c362e56|width=40%)
+![image](https://github.com/berkcan25/ToDo/assets/103621562/bb8d8d83-5503-4103-ad46-4e7d1c362e56)
 
 ## Features
 
