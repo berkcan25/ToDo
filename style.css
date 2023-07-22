@@ -1,0 +1,79 @@
+:root {
+    --main-color: #21105a;
+    --input-color: #403366;
+    --hover-color: #70619e;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: white;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    margin-right: 3.5em;
+    margin-top: 1em;
+    font-size: large;
+    align-items: center;
+}
+
+
+
+.btn {
+    background-color: var(--input-color);
+    color: white;
+    border: 2px solid black;
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 1em;
+    margin-right: 0.5em;
+    max-height: 0px;
+    max-width: 0px;
+}
+
+#add-btn {
+    max-height: fit-content;
+    max-width: fit-content;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    border-radius: 0 7px 7px 0;
+    border-left: 0;
+    margin: 0;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+.input-container {
+    display: flex;
+}
+
+#input-text {
+    border: 2px solid black;
+    border-right: 0px;
+    border-radius: 7px 0 0 7px;
+    padding: 7px;
+    background-color: var(--input-color);
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+}
+
+#input-text:focus {
+    outline: 0;
+}
