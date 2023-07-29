@@ -58,6 +58,11 @@ function assignAddButtonBehavior() {
     addButton.addEventListener("click", () => {
         enterInput();
     });
+    addButton.addEventListener("keyup", (e) => {
+        if (e.key === "Enter" || e.keyCode === 13) {
+            enterInput();
+        }
+    });
 }
 function enterInput() {
     if (input == null) {return}
@@ -87,10 +92,15 @@ function assignEventListeners() {
 function assignCheckBoxEventListener(listBtn:Element) {
     listBtn.addEventListener("click", () => {
         removeListItem(listBtn);
-
     });
+    if (listBtn instanceof HTMLElement) {
+        listBtn.addEventListener("keyup", (e) => {
+            if (e.key === "Enter" || e.keyCode === 13) {
+                enterInput();
+            }
+        });
+    }
 }
-
 //Functions for adding a new item to the to-do list
 function addListItem(inputValue:string) {
     if (toDoList == null) {return}
